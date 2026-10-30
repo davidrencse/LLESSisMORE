@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>LLess · Decision notebook</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script defer src="/cards.js"></script>
+    <script defer src="/guided.js"></script>
+    <script defer src="/analysis.js"></script>
+    <script defer src="/intake.js"></script>
+    <script defer src="/field.js"></script>
+    <script defer src="/dashboard.js"></script>
+    <script defer src="/app.js"></script>
+    <script defer src="/workspace.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#workspace">Skip to workspace</a>
+    <aside class="sidebar">
+      <a class="brand" href="/"
+        ><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect x="1" y="1" width="30" height="30" rx="3" />
+          <path d="M8 24V17M13 24V9M18 24V13M23 24V20M6 24.5h20" /></svg
+        ><span>LLess<small>Decision notebook</small></span></a
+      >
+      <section class="side-box" aria-label="Server status">
+        <div id="server-status" class="server-status" aria-live="polite">
+          Checking server
+        </div>
+      </section>
+      <details id="side-tree" class="side-tree" open>
+        <summary>
+          <h2>Decision tree</h2>
+          <span id="tree-count"></span>
+        </summary>
+        <label class="check"
+          ><input id="archived" type="checkbox" /> Show archived</label
+        >
+        <nav id="tree" aria-label="Decision tree"></nav>
+      </details>
+      <section class="side-system" aria-labelledby="system-heading">
+        <h2 id="system-heading">Workspace</h2>
+        <dl id="system"></dl>
+      </section>
+      <details class="side-access">
+        <summary>API access token</summary>
+        <label
+          >Token<input
+            id="token"
+            type="password"
+            autocomplete="off"
+            placeholder="If required by server" /></label
+        ><small>Kept in this page's memory only.</small>
+      </details>
+      <button id="example" class="quiet">Load illustrative example</button>
+    </aside>
+    <div class="frame">
+      <main id="workspace">
+        <header class="masthead">
+          <div>
+            <h1 id="title">New decision</h1>
+            <p id="subtitle">Draft · not saved yet</p>
+          </div>
+          <div class="masthead-actions">
+            <label class="tier"
+              >Compute tier
+              <select id="tier">
+                <option value="">Automatic</option>
+                <option>small</option>
+                <option>medium</option>
+                <option>large</option>
+              </select></label
+            ><button id="new" class="primary">New decision</button>
+          </div>
+        </header>
+        <dl id="overview" class="overview" aria-label="Draft summary"></dl>
+        <div id="notice" role="status" aria-live="polite"></div>
+        <div class="toolbar">
+          <div class="tabs" role="tablist" aria-label="Notebook view">
+            <button role="tab" aria-selected="true" data-tab="dashboard">
+              Dashboard</button
+            ><button role="tab" aria-selected="false" data-tab="inputs">
+              Inputs</button
+            ><button role="tab" aria-selected="false" data-tab="statistics">
+              Statistics</button
+            ><button role="tab" aria-selected="false" data-tab="audit">
+              Provenance
+            </button>
+          </div>
+        </div>
+        <div class="layout">
+          <section id="content" aria-label="Decision workspace"></section>
+          <aside class="questions" aria-label="Record inspector">
+            <section class="inspector-record" aria-labelledby="record-heading">
+              <h2 id="record-heading">Record</h2>
+              <dl id="record"></dl>
+            </section>
+            <h2>Questions & uncertainty</h2>
+            <p class="muted">
+              Bounded questions make missing assumptions visible. You can skip
+              and return later.
+            </p>
+            <div id="questions"></div>
+            <h3>Resume a session</h3>
+            <select id="sessions" aria-label="Saved sessions">
+              <option value="">Choose a saved session</option></select
+            ><button id="resume">Resume session</button>
+            <hr />
+            <h3>Related context</h3>
+            <p class="muted">
+              Offline lexical and hashed-vector retrieval fallback. Pin
+              decisions in the tree to keep them in context.
+            </p>
+            <input
+              id="search"
+              aria-label="Search related context"
+              placeholder="Search recorded context"
+            /><button id="retrieve">Find context</button>
+            <div id="retrieval"></div>
+          </aside>
+        </div>
+        <footer>
+          LLess describes distributions. It does not recommend or rank your
+          choices.
+        </footer>
+      </main>
+      <div class="statusbar" id="statusbar" role="region" aria-label="Server details"></div>
+    </div>
+  </body>
+</html>

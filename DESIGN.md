@@ -1,0 +1,13 @@
+# LLess design
+
+The front door (/) is one white page with a single large text box and nothing else but a one-line footer; results render below it as you type, in the same card language as the workspace dashboard. Behind it, at /workspace.html, Operate mode: a monochrome decision notebook laid out like an archive workstation. A black sidebar holds server status, the decision tree and workspace counts. The white main column carries a draft summary strip, tabbed dashboard/inputs/statistics/provenance (the dashboard opens first: one large text box and an Analyze button; results are one card per option on a shared scale, and text without numbers falls back to a prefilled chance/outcome grid), and a right-hand record inspector with the questions beside it. A thin status bar at the bottom reports what `/api/health` and the audit log return. Preserve user option order. No option scoring, winning badges or recommendation colour.
+
+Tokens (all neutral, no hue): ink #0a0a0a; muted #5b5b5b; paper #ffffff; wash #f6f6f5; line #e3e3e1; line-2 #c9c9c6; sidebar #0b0b0b with text #f4f4f3 and muted #a8a8a5. Radii 4px for controls, 6px for panels. Elevation is a 1px border, never a shadow.
+
+Type: system humanist sans (Segoe UI Variable / system-ui) for UI and prose. Monospace (Cascadia Mono / ui-monospace) only for data: IDs, versions, timestamps, numeric inputs, table values, axis labels, status values and JSON. Panel headings are 13px uppercase, tracked 0.08em; there are no eyebrow labels above headings. h1 28px, body 16px, secondary 13–14px. Tabular numerals in every table.
+
+State without colour: uncertainty and info notices use a dashed 1px ink border; success uses a solid grey border; errors are inverted (white on ink). Invalid inputs get a 2px dashed ink border. The selected tree node inverts to white on black.
+
+Statistical interval plots stay the signature: labelled P05–P95 ranges with an open EV marker and a dashed zero line, never a preferred option. Monte Carlo results draw every sample as a WebGL point at its exact value; cluster height is proportional to frequency, with median and P05–P95 marks over the field. Without WebGL the summary table stands alone and says so. One motion moment: the sample field opens from each row's centre line (about 900ms, exponential ease-out), skipped under reduced motion.
+
+Unknowns are text, never zeros. Example data appears only when explicitly loaded. Every summary value (strip, inspector, sidebar counts, status bar) comes from the draft or a server response; nothing is illustrative. Visible keyboard focus, themed selection and scrollbars, 44px touch targets on coarse pointers, and single-column reflow below 760px with no horizontal page scroll.

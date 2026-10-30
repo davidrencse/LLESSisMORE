@@ -1,0 +1,1 @@
+play your life like a poker game. Every decision should factor in EV, bet sizing, tail risk, black swan events, and correlated decisions.

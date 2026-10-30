@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>LLess · Decision notebook</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script defer src="/cards.js"></script>
+    <script defer src="/text.js"></script>
+  </head>
+  <body class="solo">
+    <main class="solo-main">
+      <label class="sr-only" for="text">Describe your decision, with chances and outcomes for each option</label>
+      <textarea
+        id="text"
+        spellcheck="true"
+        maxlength="20000"
+        autofocus
+        placeholder="Should I take the new job or stay?
+Take the job: 60% it goes well (+6), 40% it doesn't (-3)
+Stay: 80% nothing changes (0), 20% I get restless (-2)"
+      ></textarea>
+      <section id="output" aria-live="polite" aria-label="Results"></section>
+    </main>
+    <footer class="solo-foot">
+      <span>LLess describes outcomes. It does not pick for you.</span>
+      <a href="/workspace.html">Workspace</a>
+    </footer>
+  </body>
+</html>

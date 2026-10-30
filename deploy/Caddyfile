@@ -1,0 +1,7 @@
+# Set LIFEEV_DOMAIN in Caddy's environment to a domain you control.
+# Set the same hostname in the app's LIFEEV_ALLOWED_HOSTS, configure
+# LIFEEV_API_TOKEN, and keep uvicorn bound to 127.0.0.1:8000.
+{$LIFEEV_DOMAIN} {
+    reverse_proxy 127.0.0.1:8000
+    header Strict-Transport-Security "max-age=31536000"
+}

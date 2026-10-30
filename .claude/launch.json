@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "lless-preview",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": [
+        "-NoProfile",
+        "-Command",
+        "$env:LIFEEV_DATA_DIR = Join-Path $env:TEMP 'lless-preview-data'; $env:LIFEEV_API_TOKEN = ''; .\\.venv\\Scripts\\python.exe -m uvicorn lifeev.api:app --host 127.0.0.1 --port 8799"
+      ],
+      "port": 8799
+    }
+  ]
+}

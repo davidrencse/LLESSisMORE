@@ -1,0 +1,15 @@
+{
+  "name": "lless-web-tests",
+  "version": "1.0.0",
+  "description": "DOM tests for the dependency-free LLess browser client",
+  "scripts": {
+    "test": "node --test tests/web.test.cjs tests/web.text.test.cjs tests/web.field.test.cjs tests/web.integration.cjs"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "commonjs",
+  "devDependencies": {
+    "jsdom": "^30.1.3"
+  },
+  "private": true
+}
